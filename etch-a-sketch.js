@@ -1,7 +1,7 @@
 const container = document.getElementById('container');
 const resizeButton = document.getElementById('resizebutton');
 const clearButton = document.getElementById('clearbutton');
-const cells = document.getElementsByClassName('class');
+
 
 function drawGrid(size) { 
   for(i = 0; i < size; i++) {
@@ -10,12 +10,12 @@ function drawGrid(size) {
 
     container.appendChild(cell); 
 
-    cell.addEventListener("mouseleave", () => cell.id ='colored');
+    cell.addEventListener("mouseleave", () => cell.className ='colored');
   } 
 }
 
 function fillCell(target) {
-  target.id = 'colored';
+  target.className = 'colored';
 }
 
 function gridResize() {
@@ -37,7 +37,12 @@ function gridResize() {
 }
 
 function clearGrid() {
-  cells.id = "";
+const cells = document.getElementsByClassName('colored'); // Getting cells that are colored and then turning HTMLCollection object to Array for iterating
+let coloredCells = Array.from(cells);  
+
+for(i = 0; i < coloredCells.length; i++) {
+    coloredCells[i].className = "";
+  }
 }
 
 
