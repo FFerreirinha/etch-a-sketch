@@ -8,8 +8,12 @@
     justify-content: center;
 }
 
-#cell {
+#container > div {
   color: white;
   padding: 5px;
   border: 1px solid black;
 }   
+
+#colored { 
+  background-color: black;
+}
