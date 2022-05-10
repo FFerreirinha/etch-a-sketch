@@ -1,9 +1,13 @@
+:root {
+  --gridSize: 16;
+}
+
 #container {
 
     margin: 0px;
     display: grid;
-    grid-template-columns: 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
-    grid-template-rows: 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
+    grid-template-columns: repeat(var(--gridSize), 25px);
+    grid-template-rows: repeat(var(--gridSize), 25px);
     gap: 1px;
     justify-content: center;
 }
@@ -16,4 +20,8 @@
 
 #colored { 
   background-color: black;
+}
+
+#buttoncontainer {
+  text-align: center;
 }
